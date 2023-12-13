@@ -1,0 +1,30 @@
+div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+}
+
+#Inc{
+  height: 35px;
+  width: 80px;
+  color: white;
+  background-color: green;
+  border-radius: 15px;
+}
+
+#Dec{
+  height: 35px;
+  width: 80px;
+  color: white;
+  background-color: red;
+  border-radius: 15px;
+}
+
+#Reset{
+  height: 35px;
+  width: 70px;
+  color: black;
+  background-color: grey;
+  border-radius: 20px;
+}
