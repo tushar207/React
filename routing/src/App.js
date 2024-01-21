@@ -1,36 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Components/Navbar';
-import Home from './Components/Home';
-import About from './Components/About';
-
-import React from "react";
+import React, { Component } from "react";
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Link
+  Link,
 } from "react-router-dom";
+import Home from "./component/home";
+import About from "./component/about";
+import Navbar from "./component/navbar";
 
-function App() {
-  return (
-    <>
-    <Navbar></Navbar>
-    {/* <Home></Home>
-    <About></About> */}
+import "./App.css";
 
-    <Router>
-    <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-        </Router>
-    </>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <ul className="App-header">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/navbar">
+                Navbar Us
+              </Link>
+            </li>
+          </ul>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={<Home />}
+            ></Route>
+            <Route
+              exact
+              path="/about"
+              element={<About />}
+            ></Route>
+            <Route
+              exact
+              path="/navbar"
+              element={<Navbar />}
+            ></Route>
+          </Routes>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
